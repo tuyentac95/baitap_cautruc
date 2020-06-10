@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DO you love me</title>
+</head>
+<body>
+    <form>
+    <h2>Do you love me?</h2>
+    <p>
+        <input type="button" value="YES" onclick="love();" style="width: 80px; height: 30px;"/>&nbsp;
+        <input type="button" value="NO" id="noLove" onmouseover="nolove();" style="width: 80px; height: 30px"/>
+    </p>
+    </form>
+    <script>
+        function love() {
+            alert('I love you too <3');
+        }
+        let obj = null;
+        obj = document.getElementById('noLove');
+        function init() {
+        obj = document.getElementById('noLove');
+        obj.style.position = 'relative';
+        obj.style.left = '0px';
+        obj.style.top = '0px';
+        }
+        function nolove() {
+            obj.style.left = window.innerHeight*Math.random() + 'px';
+            obj.style.top = window.innerWidth*Math.random() + 'px';
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>
