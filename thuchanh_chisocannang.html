@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số cân nặng</title>
+</head>
+<body>
+    <form>
+        <p> Nhập cân nặng (kg): <input type="number" id="ipWeight"></p>
+        <p> Nhập chiều cao (m): <input type="number" id="ipHeight"></p>
+        <p> <input type="button" value="Đánh giá" onclick="tinhBMI();"></p>
+        <p> Chỉ số BMI: <span id="BMI"></span></p>
+        <p> Đánh giá: <span id="Inter"></span></p>
+    </form>
+    <script>
+        function tinhBMI() {
+            let weight = parseFloat(document.getElementById('ipWeight').value).toFixed(2);
+            let height = parseFloat(document.getElementById('ipHeight').value).toFixed(2);
+            let BMI = (weight / (height * height)).toFixed(2);
+            document.getElementById('BMI').innerHTML = BMI;
+            if (BMI < 18.5) {
+                document.getElementById('Inter').innerText = 'Underweight';
+            } else if (BMI < 25.0) {
+                document.getElementById('Inter').innerText = 'Normal';
+            } else if (BMI < 30.0) {
+                document.getElementById('Inter').innerText = 'Overweight';
+            } else {
+                document.getElementById('Inter').innerText = 'Obese';
+            }
+        }
+    </script>
+</body>
+</html>
