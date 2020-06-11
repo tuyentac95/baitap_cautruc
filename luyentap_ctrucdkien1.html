@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 1</title>
+</head>
+<body>
+    <h3>Bài 1:</h3>
+        <form>
+            <p>Nhập số a: <input type="number" id="num1"/></p>
+            <p>Nhập số b: <input type="number" id="num2"/></p>
+            <p><input type="button" value="Kiểm tra" onclick="kiemtra();"/></p>
+            <p><span id="Result"></span></p>
+        </form>
+        <script>
+            function kiemtra() {
+                let a = document.getElementById('num1').value;
+                let b = document.getElementById('num2').value;
+                if (a % b == 0) {
+                    document.getElementById('Result').innerHTML = a + ' chia hết cho ' + b;
+                } else {
+                    document.getElementById('Result').innerHTML = a + ' không chia hết cho ' + b;
+                }
+            }
+        </script>
+    <h3>Bài 2:</h3>
+    <form>
+        <p>Nhập tuổi: <input type="number" id="age"/></p>
+        <p><input type="button" value="Kiểm tra" onclick="kiemtra2();"/></p>
+        <p><span id="Result2"></span></p>
+    </form>
+    <script>
+        function kiemtra2() {
+            let age = document.getElementById('age').value;
+            if (age > 14 && age < 18) {
+                document.getElementById('Result2').innerText = 'HS đủ điều kiện học lớp 10';
+            } else {
+                document.getElementById('Result2').innerText = 'HS không đủ điều kiện học lớp 10';
+            }
+        }
+    </script>
+    <h3>Bài 3:</h3>
+    <form>
+        <p>Nhập số: <input type="number" id="num"/></p>
+        <p><input type="button" value="Kiểm tra" onclick="kiemtra3();"/></p>
+        <p><span id="Result3"></span></p>
+    </form>
+    <script>
+        function kiemtra3() {
+            let num = document.getElementById('num').value;
+            if (num > 0) {
+                document.getElementById('Result3').innerHTML = num + ' lớn hơn 0';
+            } else if (num < 0) {
+                document.getElementById('Result3').innerHTML = num + ' nhỏ hơn 0';
+            } else {
+                document.getElementById('Result3').innerHTML = num + ' bằng 0';
+            }
+        }
+    </script>
+    <h3>Bài 4:</h3>
+    <form>
+        <p>Nhập số thứ 1: <input type="number" id="so1"/></p>
+        <p>Nhập số thứ 2: <input type="number" id="so2"/></p>
+        <p>Nhập số thứ 3: <input type="number" id="so3"/></p>
+        <p><input type="button" value="Kiểm tra" onclick="kiemtra4();"/></p>
+        <p><span id="Result4"></span></p>
+    </form>
+    <script>
+        function kiemtra4() {
+            let so1 = document.getElementById('so1').value;
+            let so2 = document.getElementById('so2').value;
+            let so3 = document.getElementById('so3').value;
+            if (so1 > so2) {
+                if (so1 > so3) {
+                    document.getElementById('Result4').innerHTML = so1 + ' lớn nhất';
+                } else {
+                    document.getElementById('Result4').innerHTML = so3 + ' lớn nhất';
+                }
+            } else if (so2 > so3) {
+                document.getElementById('Result4').innerHTML = so2 + ' lớn nhất';
+            } else {
+                document.getElementById('Result4').innerHTML = so3 + ' lớn nhất';
+            }
+        }
+    </script>
+    <h3>Bài 5:</h3>
+    <form>
+        <table>
+            <tr style="text-align: center;">
+                <td>&nbsp;</td>
+                <td>Điểm 15 phút (HS1)</td>
+                <td>Điểm giữa kì (HS2)</td>
+                <td>Điểm cuối kì (HS3)</td>
+            </tr>
+            <tr>
+                <td>Nhập điểm</td>
+                <td><input type="number" id="hs1"/></td>
+                <td><input type="number" id="hs2"/></td>
+                <td><input type="number" id="hs3"/></td>
+            </tr>
+        </table>
+        <p><input type="button" value="Đánh giá" onclick="danhgia();"/></p>
+        <p>Điểm trung bình: <span id="dtb"></span></p>
+        <p>Xếp loại: <span id="xl"></span></p>
+    </form>
+    <script>
+        function danhgia() {
+        let diemhs1 = parseFloat(document.getElementById('hs1').value);
+        let diemhs2 = parseFloat(document.getElementById('hs2').value);
+        let diemhs3 = parseFloat(document.getElementById('hs3').value);
+        let diemtb = ((diemhs1 + diemhs2 * 2 + diemhs3 * 3) / 6);
+        document.getElementById('dtb').innerHTML = (diemtb.toFixed(2));
+        if (diemtb >= 8.5) {
+            document.getElementById('xl').innerText = "Học lực giỏi";
+        } else if (diemtb >= 6.5) {
+            document.getElementById('xl').innerText = "Học lực khá";
+        } else {
+            document.getElementById('xl').innerText = "Học lực trung bình";
+        }
+        }
+    </script>
+    <h3>Bài 6:</h3>
+    <form>
+        <p>Nhập doanh sô (triệu VND): <input type="number" id="ds"/>
+            <input type="button" value="Tính hoa hồng" onclick="hoahong();">
+        </p>
+        <p>Tiền hoa hồng: <span id="hhong"></span></p>
+    </form>
+    <table>
+        <tr>
+            <th>Doanh số (triệu VND)</th>
+            <th>Hoa hồng (%)</th>
+        </tr>
+        <tr>
+            <td>0-10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>10-30</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>30-100</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>>100</td>
+            <td>35</td>
+        </tr>
+    </table>
+    <script>
+        function hoahong() {
+            let dso = parseInt(document.getElementById('ds').value);
+            let hh = 0;
+            if (dso > 100) {
+                hh = 35;
+            } else if (dso > 30) {
+                hh = 20;
+            } else if (dso > 10) {
+                hh = 10;
+            } else {
+                hh = 5;
+            }
+            let hhong = (dso * hh / 100);
+            document.getElementById('hhong').innerHTML = hhong + ' triệu VND';
+        }
+    </script>
+    <h3>Bài 7:</h3>
+    <p>Nhập thời gian gọi (phút): <input type="number" id="phutgoi"/></p>
+    <p><input type="button" value="Tính cước phí" onclick="tinhcuoc();"></p>
+    <p>Cước phí phải trả: <span id="tiencuoc"></span></p>
+    <table style="border: 1px solid black;width: 220px;">
+        <tr>
+            <td>Phí thuê bao</td>
+            <td>25000</td>
+        </tr>
+        <tr>
+            <td>50 phút đầu tiên </td>
+            <td>600đ/p</td>
+        </tr>
+        <tr style="border: 1px solid black;">
+            <td>150 phút tiếp theo</td>
+            <td>400đ/p</td>
+        </tr>
+        <tr>
+            <td>Sau 200 phút</td>
+            <td>200đ/p</td>
+        </tr>
+    </table>
+    <script>
+        function tinhcuoc() {
+            let phutgoi = document.getElementById('phutgoi').value;
+            let tiencuoc = 25000;
+            if (phutgoi <= 50) {
+                tiencuoc += (phutgoi * 600);
+            } else if (phutgoi <= 200) {
+                tiencuoc += (50 * 600 + (phutgoi - 50) * 400);
+            } else {
+                tiencuoc += (50 * 600 + 150 * 400 + (phutgoi - 200) * 200);
+            }
+            document.getElementById('tiencuoc').innerHTML = tiencuoc;
+        }
+    </script>
+</body>
+</html>

@@ -26,10 +26,10 @@
             <th colspan="4"><span id="Result"></span></th>
         </tr>
         <tr>
-            <td><input type="button" value="1" onclick="Bthuc(this.value);"/></td>
+            <td><input type="button" name="number" id="button" value="1" onclick="Bthuc(this.value);"/></td>
             <td><input type="button" value="2" onclick="Bthuc(this.value);"/></td>
             <td><input type="button" value="3" onclick="Bthuc(this.value);"/></td>
-            <td><input type="button" value="+" onclick="Bthuc(this.value);"/></td>
+            <td><input type="button" name="other" id="button" value="+" onclick="Bthuc(this.value);"/></td>
         </tr>
         <tr>
             <td><input type="button" value="4" onclick="Bthuc(this.value);"/></td>
@@ -47,16 +47,16 @@
             <td><input type="button" value="C" onclick="clear1();"/></td>
             <td><input type="button" value="0" onclick="Bthuc(this.value);"/></td>
             <td><input type="button" value="=" onclick="getRes();"></td>
-            <td><input type="button" value="/" onclick="Bthuc(this.value);"/></td>
+            <td><input type="button" value="/" onclck="Bthuc(this.value);"/></td>
         </tr>
     </table>
     </form>
     <script>
         let Res='';
         function Bthuc(value) {
-            Res = Res + value;
-            document.getElementById('Result').innerHTML = Res;
-        }
+                Res += value;
+                document.getElementById('Result').innerHTML = Res;
+            }
         function clear1() {
             Res = '';
             document.getElementById('Result').innerHTML = Res;

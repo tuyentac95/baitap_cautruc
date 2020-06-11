@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Cheap Fast</title>
+</head>
+<body>
+    <form>
+    <table>
+        <tr>
+            <td><img id="pic1" style="width: 300px;" src="https://vietnamembassy-egypt.org/wp-content/uploads/2019/08/M%C3%A8o-Mau-Ai-C%E1%BA%ADp-1.jpg"/>
+            <img id="pic2" style="width: 100px;" src="https://vietnamembassy-egypt.org/wp-content/uploads/2019/08/M%C3%A8o-Mau-Ai-C%E1%BA%ADp-1.jpg"/>
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="Move Right" onclick="moveRight();"/><br>
+    <input type="button" value="Move Left" onclick="moveLeft();"/>
+    </form>
+    <script>
+        let imgObj = null;
+        inmObj = document.getElementById('pic2');
+        function init() {
+            imgObj = document.getElementById('pic2');
+            imgObj.style.position = 'relative';
+            imgObj.style.left = '0px';
+        }
+        function moveRight() {
+            imgObj.style.left = parseInt(imgObj.style.left) + 20 + 'px';
+        }
+        function moveLeft() {
+            imgObj.style.left = parseInt(imgObj.style.left) - 20 + 'px';
+        }
+        window.onload = init;
+    </script>
+</body>
+</html>
