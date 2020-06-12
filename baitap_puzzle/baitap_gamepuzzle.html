@@ -5,63 +5,50 @@
     <title>Game Puzzle</title>
 </head>
 <body>
-    <img id = "pic1" onclick="changeImage1();" src="chim_1.jpg" value="chim" style="width: 200px;">
-    <img id = "pic2" onclick="changeImage2();" src="cho_2.jpg" value="cho" style="width: 200px;">
+    <img id = "pic1" onclick="changeImage1();" src="chim_1.jpg" style="width: 200px;">
+    <img id = "pic2" onclick="changeImage2();" src="cho_2.jpg" style="width: 200px;">
     <br>
-    <img id = "pic3" onclick="changeImage3();" src="meo_3.jpg" value="meo" style="width: 200px;">
-    <img id = "pic4" onclick="changeImage4();" src="chim_4.jpg" value="chim" style="width: 200px;">
+    <img id = "pic3" onclick="changeImage3();" src="meo_3.jpg" style="width: 200px;">
+    <img id = "pic4" onclick="changeImage4();" src="chim_4.jpg" style="width: 200px;">
     <script>
         function changeImage1() {
             let img1 = document.getElementById('pic1');
             if (img1.src.match('chim')) {
                 img1.src = 'cho_1.jpg';
-                img1.value = "cho";
             } else if (img1.src.match('cho')) {
                 img1.src = 'meo_1.jpg';
-                img1.value = 'meo';
             } else {
                 img1.src = 'chim_1.jpg';
-                img1.value = 'chim';
             }
-
         }
         function changeImage2() {
             let img2 = document.getElementById('pic2');
             if (img2.src.match('chim')) {
                 img2.src = 'cho_2.jpg';
-                img2.value = "cho";
             } else if (img2.src.match('cho')) {
                 img2.src = 'meo_2.jpg';
-                img2.value = "meo";
             } else {
                 img2.src = 'chim_2.jpg';
-                img2.value = "chim";
             }
         }
         function changeImage3() {
             let img3 = document.getElementById('pic3');
             if (img3.src.match('chim')) {
                 img3.src = 'cho_3.jpg';
-                img3.value = "cho";
             } else if (img3.src.match('cho')) {
                 img3.src = 'meo_3.jpg';
-                img3.value = "meo";
             } else {
                 img3.src = 'chim_3.jpg';
-                img3.value = "chim";
             }
         }
         function changeImage4() {
             let img4 = document.getElementById('pic4');
             if (img4.src.match('chim')) {
                 img4.src = 'cho_4.jpg';
-                img4.value = "cho";
             } else if (img4.src.match('cho')) {
                 img4.src = 'meo_4.jpg';
-                img4.value = "meo";
             } else {
                 img4.src = 'chim_4.jpg';
-                img4.value = "chim";
             }
         }
     </script>
