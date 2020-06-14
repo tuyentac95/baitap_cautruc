@@ -10,6 +10,7 @@
     <br>
     <img id = "pic3" onclick="changeImage3();" src="meo_3.jpg" style="width: 200px;">
     <img id = "pic4" onclick="changeImage4();" src="chim_4.jpg" style="width: 200px;">
+    <p><input type="button" value="Hoàn thành" style="background-color: darkgrey;" id="xong"></p>
     <script>
         function changeImage1() {
             let img1 = document.getElementById('pic1');
@@ -20,6 +21,7 @@
             } else {
                 img1.src = 'chim_1.jpg';
             }
+            isDone();
         }
         function changeImage2() {
             let img2 = document.getElementById('pic2');
@@ -30,6 +32,7 @@
             } else {
                 img2.src = 'chim_2.jpg';
             }
+            isDone();
         }
         function changeImage3() {
             let img3 = document.getElementById('pic3');
@@ -40,6 +43,7 @@
             } else {
                 img3.src = 'chim_3.jpg';
             }
+            isDone();
         }
         function changeImage4() {
             let img4 = document.getElementById('pic4');
@@ -49,6 +53,25 @@
                 img4.src = 'meo_4.jpg';
             } else {
                 img4.src = 'chim_4.jpg';
+            }
+            isDone();
+        }
+        function isDone() {
+            let image1 = document.getElementById('pic1');
+            let image2 = document.getElementById('pic2');
+            let image3 = document.getElementById('pic3');
+            let image4 = document.getElementById('pic4');
+            if (image1.src.match('chim') && image2.src.match('chim')
+                && image3.src.match('chim') && image4.src.match('chim')) {
+                document.getElementById('xong').style.backgroundColor = 'green';
+            }
+            if (image1.src.match('cho') && image2.src.match('cho')
+                && image3.src.match('cho') && image4.src.match('cho')) {
+                document.getElementById('xong').style.backgroundColor = 'green';
+            }
+            if (image1.src.match('meo') && image2.src.match('meo')
+                && image3.src.match('meo') && image4.src.match('meo')) {
+                document.getElementById('xong').style.backgroundColor = 'green';
             }
         }
     </script>
