@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+    <form>
+        <p>Nhập số N: <input type="number" id="Nhap"/>&nbsp;<input type="button" value="Nhập" onclick="timSoNgto();"></p>
+        <p><span id="soNgto"></span></p>
+        <script>
+            function timSoNgto() {
+                document.getElementById('soNgto').innerHTML = '';
+                let soUoc=0, j, i, count=0;
+                let Num = parseInt(document.getElementById('Nhap').value);
+                for (i = 1; count < Num; i++) {
+                    for (j=1; j <= i; j++) {
+                        if (i % j === 0) {
+                            soUoc += 1;
+                        }
+                    }
+                    if (soUoc === 2) {
+                        document.getElementById('soNgto').innerHTML += i + ' ';
+                        soUoc = 0;
+                        count += 1;
+                    } else {
+                        soUoc = 0;
+                    }
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>
