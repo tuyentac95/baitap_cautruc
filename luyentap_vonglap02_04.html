@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 2_4</title>
+</head>
+<body>
+    <script>
+        let HCN='', i, j;
+        for (i=0; i < 40; i++) {
+            HCN += '*';
+        }
+        HCN += '<br>';
+        for (i=0; i < 7; i++) {
+            HCN += '*';
+            for (j = 0; j < 38; j++) {
+                HCN += '&nbsp;&nbsp;';
+            }
+            HCN += '*<br>';
+        }
+        for (i=0; i < 40; i++) {
+            HCN = HCN + '*';
+        }
+        document.write(HCN);
+    </script>
+</body>
+</html>

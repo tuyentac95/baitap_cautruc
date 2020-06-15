@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 2_1</title>
+</head>
+<body>
+    <script>
+        let i, j, count;
+        let N = +prompt('Nhập N để hiển thị N số đầu tiên trong dãy Fibonacci: ');
+        document.write('1');
+        for (i = 1, j = 0, count = 0; count < N; count++ ) {
+            i = i + j;
+            j = i - j;
+            document.write(', ' + i);
+        }
+    </script>
+</body>
+</html>
