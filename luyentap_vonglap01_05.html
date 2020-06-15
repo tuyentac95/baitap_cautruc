@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 1_5</title>
+</head>
+<body>
+    <script>
+        let i, count, j;
+        let sum = 1;
+        for (i=1, j=0, count=0; count < 19;count++ ) {
+            i = i + j;
+            j = i - j;
+            sum += i;
+        }
+        document.write('Tổng 20 số đầu tiên trong dãy fibonacci là ' + sum);
+    </script>
+</body>
+</html>

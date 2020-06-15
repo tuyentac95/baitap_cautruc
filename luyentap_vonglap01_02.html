@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 1_2</title>
+</head>
+<body>
+    <script>
+        let nhietdo;
+        nhietdo = +prompt('Nhập nhiệt độ: ');
+        while (nhietdo > 100) {
+            alert('Giảm nhiệt độ');
+            nhietdo = +prompt('Nhập lại nhiệt độ');
+            while (nhietdo < 20) {
+                alert('Tăng nhiệt độ');
+                nhietdo = +prompt('Nhập lại nhiệt độ');
+            }
+        }
+        while (nhietdo < 20) {
+            alert('Tăng nhiệt độ');
+            nhietdo = +prompt('Nhập lại nhiệt độ');
+            while (nhietdo > 100) {
+                alert('Giảm nhiệt độ');
+                nhietdo = +prompt('Nhập lại nhiệt độ');
+            }
+        }
+        alert('OK');
+    </script>
+</body>
+</html>
